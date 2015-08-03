@@ -152,7 +152,7 @@ class HistoricalRecords(object):
                     field_arguments['db_column'] = old_field.db_column
                 field = FieldType(
                     old_field.rel.to,
-                    related_name='+',
+                    related_name='historical%s'%model._meta.object_name.lower(),
                     null=True,
                     blank=True,
                     primary_key=False,
